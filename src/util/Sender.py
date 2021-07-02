@@ -19,7 +19,7 @@ class Sender:
         if(file_obj == None):
             return
         try:
-            files = {'file': open('test.txt', 'rb')}
+            files = {'file': file_obj}
             requests.post(self.url, files=files)
         except:
             print(f"[INFO] Connection to {self.ip} on port {self.port} failed")
