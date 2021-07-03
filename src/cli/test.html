@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Test</title>
+</head>
+<body>  
+	<center><h2><TT>Please Login</TT></h2></center>
+	    <form method='POST'>
+		<input placeholder='Name' id='name'><br>
+		<input placeholder='Password' type='password' id='pass'><br>
+		<button type='submit' onclick="fun()">Submit</button> 
+	    </form>  
+	<script type="text/javascript">
+		var fun = () =>{
+		var name=document.getElementById('name')
+		var password=document.getElementById('pass')
+		console.log('Name: ',name.value,'\nPassword: ',password.value)
+			}
+	</script>
+
+
+
+
+</body>
+</html>
