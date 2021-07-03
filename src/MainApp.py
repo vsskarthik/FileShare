@@ -1,5 +1,5 @@
 from util import Handler
-import easygui
+
 
 class App:
     def print_menu(self):
@@ -9,8 +9,8 @@ class App:
 
     def send(self):
         handler = Handler.Handler()
-        filepath = easygui.fileopenbox()
-        handler.handle_send("192.168.0.107",2805,filepath)
+        ip = input("Enter the IP Address of the reciever: ")
+        handler.handle_send(ip,2805)
         
     def recv(self):
         handler = Handler.Handler()
