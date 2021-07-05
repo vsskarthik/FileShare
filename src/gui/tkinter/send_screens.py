@@ -4,10 +4,10 @@ import tkinter.filedialog as filedialog
 import tkinter.messagebox as messagebox
 
 
-class ChoiceScreen():
+class ChoiceScreen:
     def create(self,app):
         self.send_button = Button(app.root, text="Send",command=lambda: app.change_view(app.choice_screen,app.ip_input))
-        self.recv_button = Button(app.root, text="Receive")
+        self.recv_button = Button(app.root, text="Receive",command=lambda:app.change_view(app.choice_screen,app.conf_screen))
     
     def render(self):
         self.send_button.place(relx=0.3,rely=0.5,anchor=CENTER)
@@ -17,7 +17,7 @@ class ChoiceScreen():
         self.send_button.place_forget()
         self.recv_button.place_forget()
 
-class IpInputScreen():
+class IpInputScreen:
     def create(self,app):
         self.input_label = Label(app.root,text="Receiver IP Address: ")
         self.input_box = Entry(app.root)
@@ -45,7 +45,7 @@ class IpInputScreen():
         self.ok_button.place_forget()
         self.back_button.place_forget()
 
-class FileScreen():
+class FileScreen:
     def create(self,app):
         self.file_selected = False
         self.msg_label = Label(app.root,text="Please wait till receiver responds")
@@ -90,7 +90,12 @@ class FileScreen():
         self.back_button.place(relx=0.3,rely=0.9,anchor=CENTER)
 
     def hide(self):
+        self.input_label.place_forget()
         self.browse_button.place_forget()
+        self.filepath_label.place_forget()
+        self.ok_button.place_forget()
+        self.back_button.place_forget()
+        self.back_button.place_forget()
     
     def get_data(self):
         return self.path_input.get()

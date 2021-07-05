@@ -14,7 +14,7 @@ class Handler:
         else:
             return [False,404]
 
-    def handle_recv(self,ip,port):
-        recv = Receiver.Receiver(ip,port)
-        recv.create_handler()
-        recv.start_server()
+    def handle_recv(self,ip,port,gui_app):
+        self.recv = Receiver.Receiver(ip,port,gui_app)
+        self.recv.create_handler()
+        self.recv.print_info()
